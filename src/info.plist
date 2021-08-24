@@ -470,12 +470,7 @@ echo "&lt;/items&gt;"
 if [ "${query#pg }" != "$query" ]; then
    #starts with pg
    query="${query#pg }"
-   PATH=$PATH:/usr/local/bin
-   query=${query#/}
-   idx=""
-   pass index &gt;/dev/null 2&gt;&amp;1 &amp;&amp; idx="index"
-   pass $idx generate -c -f $query 32
-   osascript -e 'display notification "Password generated and copied to clipboard" with title "Passwordstore"'
+   ./pass-action.sh pgen $query
 
 else 
     osascript -e "tell application \"Alfred\" to search \"pgen $query\""
