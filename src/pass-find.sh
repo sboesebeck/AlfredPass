@@ -8,8 +8,12 @@ PATH=$PATH:/usr/local/bin
 cd ~/.password-store
 echo '{"items":['
 
-PINENTRY_USER_DATA=gui pass index find $query | while IFS= read l; do
-	echo "{ \"title\" : \"$l\", \"arg\": \"pass $l\", \"subtitle\":\"matching entry\"},"			
+if pass index >/dev/null 2>&1; then
+	PINENTRY_USER_DATA=gui pass index find $query | while IFS= read l; do
+		echo "{ \"title\" : \"$l\", \"arg\": \"pass $l\", \"subtitle\":\"matching entry\"},"			
 
-done
+	done
+else
+	PINENTRY_USER_DATA=gui pass grep -l $query | grep -v standard | sed  -e 's/:$//'
+fi
 echo "]}"
