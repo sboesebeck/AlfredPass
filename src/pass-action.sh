@@ -16,7 +16,7 @@ elif [ "$cmd" == "clipPass" ]; then
 
 elif [ "$cmd" == "remove" ]; then
    query=${query#/}
-   PINENTRY_USER_DATA=gui pass $idx rm $query
+   PINENTRY_USER_DATA=gui pass $idx rm "$query"
    osascript -e "display notification \"Entry $query removed $idxmsg\" with title \"Passwordstore\""
 
 elif [ "$cmd" == "pgen" ]; then
