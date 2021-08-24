@@ -2,8 +2,9 @@
 cmd=$1
 query="$2"
 idx=""
-pass index >/dev/null 2>&1 && idx="index"
 PATH=$PATH:/usr/local/bin
+pass index >/dev/null 2>&1 && idx="index"
+
 if [ "$cmd" == "pinfo" ]; then
    #starts with pinfo
    osascript -e "tell application \"Alfred\" to search \"pinfo $query\""
@@ -20,7 +21,7 @@ elif [ "$cmd" == "remove" ]; then
 elif [ "$cmd" == "pgen" ]; then
    query=${query#/}
    PINENTRY_USER_DATA=gui pass $idx generate -c -f "$query" 32
-   osascript -e "display notification \"Password for $query generated and copied to clipboard\" with title \"Passwordstore\""
+   osascript -e "display notification \"Password '$idx' for $query generated and copied to clipboard\" with title \"Passwordstore\""
 else 
    osascript -e "tell application \"Alfred\" to search \"$cmd $query\""
 fi

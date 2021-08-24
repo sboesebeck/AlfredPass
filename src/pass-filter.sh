@@ -70,15 +70,16 @@ if [ $d -eq 0 ]; then
             line=0
 	    echo "$entry" | while IFS= read l; do
 			let line=line+1
-			k=$(echo $l | cut -f1 -d:)
-			v=$(echo $l | cut -f2- -d:)
-			v="${v# }"
-			v2="$v"
-			
-			if [ "$v" == "$k" ]; then
+			if [ $line -eq 1 ]; then
+				v="**********"
+				k="Password"
+			else 
+				k=$(echo $l | cut -f1 -d:)
+				v=$(echo $l | cut -f2- -d:)
+				v="${v# }"
+				
 				if [ "${k%>}" == "$k" ]; then
-				v="********"
-				k="password"
+					:
 				else
 					continue
 				fi
