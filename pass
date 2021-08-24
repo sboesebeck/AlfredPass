@@ -1,0 +1,14 @@
+pass does keep an index to make searching easier and faster
+  details: one file is kept in passwordstore called .index.gpg
+           this file will be updated by corresponding elements
+		 and kept in sync with the repository
+
+Usage: pass index action
+Valid actions are: 
+    update|recreate|create: 	updates the index
+    edit: 			edits password and updates index
+    insert:			generates new password and updates index
+    mv: 				moves password and updates index
+    rm: 				removes password and updates index
+    find: 			searches for password returns matching entry names
+    grep: 			searches for password returns lines in entries

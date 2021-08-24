@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.caluga.alfred</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>04EC69C6-7ECE-4322-A034-E5230D7AA990</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6085C4B1-2BAF-4429-B5DB-7BEF8B1FEA64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>13E5F869-9B19-4CF3-99E3-94387E1E6F98</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5FDD89F4-005B-4D34-809D-C5490604841E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3E247AE2-FA2D-4B56-B5E2-917B64AAF818</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>74FFF235-3CF3-447B-86DB-5955FC20CD90</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5FDD89F4-005B-4D34-809D-C5490604841E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>48A7B8E0-DD90-4207-A6AC-8823AC7B4C0E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6085C4B1-2BAF-4429-B5DB-7BEF8B1FEA64</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4933D81E-7DA6-43DF-9498-CF80EAB006BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>74FFF235-3CF3-447B-86DB-5955FC20CD90</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0351E966-B0AE-4C3A-B317-6B3AD84954E0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E63E0E91-46D7-4803-8E3F-DB0C9D9C78B5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>676ED754-4A83-4314-BD9B-E7697C87C38B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Stephan Bösebeck</string>
+	<key>description</key>
+	<string>Pass support for Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AlfredPass</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>pfind</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>query="{query}"
+
+if [ "q$query" == "q" ]; then
+	echo '{ "items" : [ { "title":"Enter search string"} ]}'
+    exit 0
+fi
+
+./pass-find.sh "$query"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>04EC69C6-7ECE-4322-A034-E5230D7AA990</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>pass</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>collecting</string>
+				<key>script</key>
+				<string>./pass-filter.sh "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Pass browse</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6085C4B1-2BAF-4429-B5DB-7BEF8B1FEA64</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./pass-action.sh {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4933D81E-7DA6-43DF-9498-CF80EAB006BE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>index creation</string>
+				<key>title</key>
+				<string>Passwordstore</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0351E966-B0AE-4C3A-B317-6B3AD84954E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pupdate</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>update pass index</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3E247AE2-FA2D-4B56-B5E2-917B64AAF818</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+PINENTRY_USER_DATA=gui pass index update</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>74FFF235-3CF3-447B-86DB-5955FC20CD90</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>pass sync</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>48A7B8E0-DD90-4207-A6AC-8823AC7B4C0E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>PATH=$PATH:/usr/local/bin
+
+pass git pull
+pass git push</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5FDD89F4-005B-4D34-809D-C5490604841E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>psync</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>sync pass</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>13E5F869-9B19-4CF3-99E3-94387E1E6F98</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>pgen</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>query="{query}"
+
+cd ~/.password-store/$query
+
+echo '&lt;?xml version="1.0"?&gt;'
+echo "&lt;items&gt;"
+found=0
+for i in $(find . -type d -depth 1 | grep -v git); do
+    let found=found+1
+    i=$(basename $i)
+    echo "&lt;item uid=\"$i\" arg=\"$query/$i/\" autocomplete=\"$i\"&gt;"
+    echo "    &lt;title&gt;$i&lt;/title&gt;"
+    echo "    &lt;subtitle&gt;dir&lt;/subtitle&gt;"
+    echo "&lt;/item&gt;"
+done
+
+
+for i in *.gpg; do
+	if [ "$i" == "*.gpg" ]; then
+        break;
+    fi
+    it=${i%%.gpg}
+    let found=found+1
+    echo "&lt;item uid=\"$it\" arg=\"pg $query/$it\" autocomplete=\"$i\"&gt;"
+    echo "    &lt;title&gt;OVERWRITE $it&lt;/title&gt;"
+    echo "    &lt;subtitle&gt;Entry&lt;/subtitle&gt;"
+    echo "&lt;/item&gt;"
+done
+if [ $found -eq 0 ]; then
+    echo "&lt;item uid=\"nothing\" arg=\"pg $query\" autocomplete=\"\"&gt;"
+    echo "    &lt;title&gt;Generate Password&lt;/title&gt;"
+    echo "    &lt;subtitle&gt;create entry&lt;/subtitle&gt;"
+    echo "&lt;/item&gt;"
+fi
+echo "&lt;/items&gt;"
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>choose path</string>
+				<key>title</key>
+				<string>Pass generate</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E63E0E91-46D7-4803-8E3F-DB0C9D9C78B5</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="{query}"
+
+if [ "${query#pg }" != "$query" ]; then
+   #starts with pg
+   query="${query#pg }"
+   PATH=$PATH:/usr/local/bin
+   query=${query#/}
+   idx=""
+   pass index &gt;/dev/null 2&gt;&amp;1 &amp;&amp; idx="index"
+   pass $idx generate -c -f $query 32
+   osascript -e 'display notification "Password generated and copied to clipboard" with title "Passwordstore"'
+
+else 
+    osascript -e "tell application \"Alfred\" to search \"pgen $query\""
+ fi</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>676ED754-4A83-4314-BD9B-E7697C87C38B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This is a simple workflow for using the pass pasword store
+Alfread is the main GUI here.
+
+Several keywords:
+
+- pass: search for entries, hit enter to see details and copy fields accordingly
+- pgen: generate a password in a category
+- pb: browse through pass's data
+- psync: sync your pass data to the repository</string>
+	<key>uidata</key>
+	<dict>
+		<key>0351E966-B0AE-4C3A-B317-6B3AD84954E0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>655</integer>
+			<key>ypos</key>
+			<integer>320</integer>
+		</dict>
+		<key>04EC69C6-7ECE-4322-A034-E5230D7AA990</key>
+		<dict>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>13E5F869-9B19-4CF3-99E3-94387E1E6F98</key>
+		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
+			<key>ypos</key>
+			<integer>550</integer>
+		</dict>
+		<key>3E247AE2-FA2D-4B56-B5E2-917B64AAF818</key>
+		<dict>
+			<key>xpos</key>
+			<integer>65</integer>
+			<key>ypos</key>
+			<integer>330</integer>
+		</dict>
+		<key>48A7B8E0-DD90-4207-A6AC-8823AC7B4C0E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>690</integer>
+			<key>ypos</key>
+			<integer>540</integer>
+		</dict>
+		<key>4933D81E-7DA6-43DF-9498-CF80EAB006BE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>645</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>5FDD89F4-005B-4D34-809D-C5490604841E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>545</integer>
+		</dict>
+		<key>6085C4B1-2BAF-4429-B5DB-7BEF8B1FEA64</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>95</integer>
+		</dict>
+		<key>676ED754-4A83-4314-BD9B-E7697C87C38B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>720</integer>
+		</dict>
+		<key>74FFF235-3CF3-447B-86DB-5955FC20CD90</key>
+		<dict>
+			<key>xpos</key>
+			<integer>315</integer>
+			<key>ypos</key>
+			<integer>335</integer>
+		</dict>
+		<key>E63E0E91-46D7-4803-8E3F-DB0C9D9C78B5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>115</integer>
+			<key>ypos</key>
+			<integer>715</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.9</string>
+	<key>webaddress</key>
+	<string>https://caluga.de</string>
+</dict>
+</plist>
