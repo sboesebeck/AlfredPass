@@ -4,6 +4,9 @@ query="$2"
 idx=""
 idxmsg=""
 PATH=$PATH:/usr/local/bin
+
+. ./env.inc
+
 pass index >/dev/null 2>&1 && idx="index" && idxmsg="and index updated"
 
 if [ "$cmd" == "pinfo" ]; then

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. ./env.inc
 
 query="$1"
 

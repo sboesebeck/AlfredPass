@@ -1,5 +1,6 @@
 #!/bin/bash
 PATH=$PATH:/usr/local/bin
+. ./env.inc
 
 query="$1"
 query=${query#pass }
@@ -72,11 +73,13 @@ if [ $d -eq 0 ]; then
 			let line=line+1
 			if [ $line -eq 1 ]; then
 				v="**********"
+				v2=$l
 				k="Password"
 			else 
 				k=$(echo $l | cut -f1 -d:)
 				v=$(echo $l | cut -f2- -d:)
 				v="${v# }"
+				v2="$v"
 				
 				if [ "${k%>}" == "$k" ]; then
 					:
