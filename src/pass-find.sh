@@ -4,7 +4,6 @@
 
 query="$1"
 
-PATH=$PATH:/usr/local/bin
 
 cd ~/.password-store
 echo '{"items":['

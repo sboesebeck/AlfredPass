@@ -3,7 +3,6 @@ cmd=$1
 query="$2"
 idx=""
 idxmsg=""
-PATH=$PATH:/usr/local/bin
 
 . ./env.inc
 

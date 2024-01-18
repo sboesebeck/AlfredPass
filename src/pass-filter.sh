@@ -1,5 +1,4 @@
 #!/bin/bash
-PATH=$PATH:/usr/local/bin
 . ./env.inc
 
 query="$1"
@@ -30,7 +29,7 @@ cd ~/.password-store/$query
 echo '<?xml version="1.0"?>'
 echo "<items>"
 found=0
-for i in $(find . -iname "*$q*" -type d -depth 1 | grep -v git); do
+for i in $(find . -maxdepth 1 -iname "*$q*" -type d | grep -v git); do
     let found=found+1
     i=$(basename $i)
     if [ "${i#.}" == "$i" ]; then
@@ -46,7 +45,7 @@ for i in $(find . -iname "*$q*" -type d -depth 1 | grep -v git); do
 done
 
 if [ $ff -eq 0 ]; then
-for i in $(find . -iname "*$q*.gpg" -type f -depth 1); do
+for i in $(find . -maxdepth 1 -iname "*$q*.gpg" -type f ); do
     if [ "$i" == "*$q*.gpg" ]; then
         break;
     fi
